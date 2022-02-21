@@ -3,17 +3,55 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <FrameLayout
-        android:id="@+id/preview_display_layout"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_weight="1">
-        <TextView
-            android:id="@+id/no_camera_access_view"
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
-            android:gravity="center"
-            android:text="@string/no_camera_access" />
-    </FrameLayout>
+    android:layout_height="match_parent"
+    android:background="@drawable/guitar1"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="334dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="252dp"
+        android:background="@drawable/roundedittext"
+        android:drawableLeft="@drawable/roundedittext"
+        android:hint="Username"
+        android:inputType="textPassword"
+        android:shadowColor="#008080"
+
+        android:shadowRadius="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="334dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="188dp"
+        android:background="@drawable/roundedittext"
+        android:drawableLeft="@drawable/roundedittext"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:shadowColor="#008080"
+
+        android:shadowRadius="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/LoginButton"
+        android:layout_width="347dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="120dp"
+        android:background="#591F1F"
+        android:text="Login"
+        android:textColor="#C5ACAC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
