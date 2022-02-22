@@ -5,6 +5,7 @@
     <uses-sdk android:targetSdkVersion="27" />
     <!-- For using the camera -->
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <!-- For MediaPipe -->
@@ -13,6 +14,7 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
@@ -25,5 +27,6 @@
         </activity>
         <activity android:name=".MediaPipe" />
         <activity android:name=".Excercises" />
+        <activity android:name=".Register" />
     </application>
 </manifest>
