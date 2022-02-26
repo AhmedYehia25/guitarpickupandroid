@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 class loginAPI extends AsyncTask<Void, Void, Boolean> {
-    String myUrl = "http://10.0.2.2:8000/api/login/";
+    String myUrl = "http://192.168.1.20:8000/api/login/";
     String username, pass;
     loginAPI(String username, String pass) {
         this.username = username;

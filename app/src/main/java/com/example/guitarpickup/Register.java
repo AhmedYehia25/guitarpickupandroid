@@ -45,6 +45,7 @@ public class Register extends AppCompatActivity {
             public void onClick(View v) {
                 if (validateForm()) {
                     try {
+                        System.out.println("here");
                         Boolean registered = new registerAPI(edit1.getText().toString(), edit2.getText().toString(), edit3.getText().toString()).execute().get();
                         if (registered) {
                             Intent intent = new Intent(getApplicationContext(),MainActivity.class);
