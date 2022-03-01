@@ -1,5 +1,6 @@
 package com.example.guitarpickup;
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 
 import java.io.BufferedInputStream;
@@ -24,9 +25,9 @@ class loginAPI extends AsyncTask<Void, Void, Boolean> {
         try {
 
             URL web = new URL(myUrl);
-            String auth = "adminahmed:mohamed13";
-            byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(StandardCharsets.UTF_8));
-            String authHeaderValue = "Basic " + new String(encodedAuth);
+//            String auth = "adminahmed:mohamed13";
+//            byte[] encodedAuth = Base64.getEncoder().encode(auth.getBytes(StandardCharsets.UTF_8));
+//            String authHeaderValue = "Basic " + new String(encodedAuth);
             HttpURLConnection  myConnection = (HttpURLConnection) web.openConnection();
             myConnection.setRequestMethod("POST");
             //myConnection.setRequestProperty("Authorization", authHeaderValue);
@@ -42,6 +43,7 @@ class loginAPI extends AsyncTask<Void, Void, Boolean> {
             int responseCode = myConnection.getResponseCode();
             if (responseCode == 200) {
                 System.out.println("success");
+
                 return true;
 
             }

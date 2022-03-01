@@ -34,7 +34,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+        if (pref.getBoolean("loggedin", false)) {
+            Intent intent = new Intent(getApplicationContext(),Excercises.class);
+            startActivity(intent);
+        } else {
+            setContentView(R.layout.activity_main);
+        }
 
         //TODO:Connect Buttons with Activity
         mLogin = (Button)findViewById(R.id.LoginButton);
@@ -50,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
                     try {
                         Boolean registered = new loginAPI(edit1.getText().toString(), edit2.getText().toString()).execute().get();
                         if (registered) {
+                            SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
+                            SharedPreferences.Editor editor = pref.edit();
+                            editor.putBoolean("loggedin", true);
+                            editor.putString("username", String.valueOf(edit1.getText()));
+                            editor.apply();
                             Intent intent = new Intent(getApplicationContext(),Excercises.class);
                             startActivity(intent);
 
