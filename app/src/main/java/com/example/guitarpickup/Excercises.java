@@ -23,7 +23,7 @@ public class Excercises extends AppCompatActivity{
         mExcercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MediaPipe.class);
+                Intent intent = new Intent(getApplicationContext(),light.class);
                 startActivity(intent);
             }
         });
