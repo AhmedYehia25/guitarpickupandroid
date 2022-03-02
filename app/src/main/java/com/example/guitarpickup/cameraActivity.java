@@ -62,6 +62,10 @@ public class cameraActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                preview.removeView(preview);
+                mCamera.setPreviewCallback(null);
+                mCamera.release();
+                mCamera = null;
                 Intent intent = new Intent(getApplicationContext(), MediaPipe.class);
                 startActivity(intent);
             }
