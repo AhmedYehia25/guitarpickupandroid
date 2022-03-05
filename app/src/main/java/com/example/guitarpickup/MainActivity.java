@@ -45,35 +45,14 @@ public class MainActivity extends AppCompatActivity {
             //TODO:Connect Buttons with Activity
             mLogin = (Button) findViewById(R.id.LoginButton);
             mRegister = (Button) findViewById(R.id.registerButton);
-            edit1 = findViewById(R.id.editText2);
-            edit2 = findViewById(R.id.editText3);
 
             //TODO:Button listener
+
             mLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (validateForm()) {
-                        try {
-                            Boolean registered = new loginAPI(edit1.getText().toString(), edit2.getText().toString()).execute().get();
-                            if (registered) {
-                                SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
-                                SharedPreferences.Editor editor = pref.edit();
-                                editor.putBoolean("loggedin", true);
-                                editor.putString("username", String.valueOf(edit1.getText()));
-                                editor.apply();
-                                Intent intent = new Intent(getApplicationContext(), Excercises.class);
-                                startActivity(intent);
-
-                            } else {
-                                Toast toast = Toast.makeText(getApplicationContext(), "Enter a valid username/password", Toast.LENGTH_LONG);
-                                toast.show();
-                            }
-                        } catch (ExecutionException e) {
-                            e.printStackTrace();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
+                    Intent intent = new Intent(getApplicationContext(), Login.class);
+                    startActivity(intent);
                 }
             });
             mRegister.setOnClickListener(new View.OnClickListener() {
@@ -85,18 +64,6 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-    }
-
-    private boolean validateForm() {
-        if (edit1.length() == 0) {
-            mLogin.setError("This field is required");
-            return false;
-        }
-        if (edit2.length() == 0) {
-            mRegister.setError("This field is required");
-            return false;
-        }
-        return true;
     }
 
 }

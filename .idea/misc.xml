@@ -14,9 +14,17 @@
         <entry key="..\:/Users/user/Desktop/gradapp/zxc/New folder/guitarpickupandroid/app/src/main/res/layout/register.xml" value="0.2694746376811594" />
         <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/drawable-v24/roundedittext.xml" value="0.1" />
         <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/drawable-v24/spinner.xml" value="0.1" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/drawable/ic_login_bk.xml" value="0.290625" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/drawable/login_shape_bk.xml" value="0.290625" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/activity_home.xml" value="0.27447916666666666" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/activity_login.xml" value="0.27025641025641023" />
         <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/activity_register.xml" value="0.264" />
         <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/excercise_start.xml" value="0.2604166666666667" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/layout_login.xml" value="0.27447916666666666" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/login.xml" value="0.264" />
         <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/mediapipe_record.xml" value="0.27447916666666666" />
+        <entry key="..\:/development/projects/guitarpickupandroid/app/src/main/res/layout/register.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

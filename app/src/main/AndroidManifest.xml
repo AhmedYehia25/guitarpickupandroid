@@ -31,6 +31,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".MediaPipe" />
+        <activity android:name=".Login" />
         <activity android:name=".Excercises" />
         <activity android:name=".light" />
         <activity android:name=".hands" />
