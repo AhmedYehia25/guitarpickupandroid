@@ -27,15 +27,15 @@ public class Register extends AppCompatActivity {
     EditText edit3;
 
 
-        // All your networking logic
-        // should be here
+    // All your networking logic
+    // should be here
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register);
+        setContentView(R.layout.activity_register);
         asd = findViewById(R.id.signupButton);
         edit1 = findViewById(R.id.mail);
         edit2 = findViewById(R.id.usrusr);
