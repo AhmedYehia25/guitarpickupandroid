@@ -52,7 +52,7 @@ public class Login extends AppCompatActivity {
                             editor.putBoolean("loggedin", true);
                             editor.putString("username", String.valueOf(edit1.getText()));
                             editor.apply();
-                            Intent intent = new Intent(getApplicationContext(), Excercises.class);
+                            Intent intent = new Intent(getApplicationContext(), Home.class);
                             startActivity(intent);
 
                         } else {

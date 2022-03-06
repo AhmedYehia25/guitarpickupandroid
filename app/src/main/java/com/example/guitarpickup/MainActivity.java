@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0);
         if (pref.getBoolean("loggedin", false)) {
-            Intent intent = new Intent(getApplicationContext(),Excercises.class);
+            Intent intent = new Intent(getApplicationContext(),Home.class);
             startActivity(intent);
         } else {
             setContentView(R.layout.activity_main);

@@ -36,12 +36,13 @@
     <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
-        android:layout_height="550dp"
-        android:layout_marginBottom="24dp"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="190dp"
         android:alpha="0.8"
-        android:background="@drawable/guitar"
+        android:background="@drawable/guitar11"
         app:layout_constraintBottom_toTopOf="@+id/LoginButton"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView4"

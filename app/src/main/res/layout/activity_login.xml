@@ -56,22 +56,25 @@
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputEmail"
                         style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:textColorHint="@android:color/black">
 
                         <EditText
                             android:id="@+id/editTextEmail"
                             style="@style/modifiedEditText"
                             android:backgroundTint="#ED2121"
-                            android:hint="@string/login_email_hint"
-                            android:inputType="textEmailAddress"
+                            android:hint="Username"
+                            android:inputType="text"
                             android:maxLines="1"
+                            android:textColor="@android:color/black"
                             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textInputPassword"
                         style="@style/parent"
-                        android:layout_marginTop="@dimen/loginViewsMargin">
+                        android:layout_marginTop="@dimen/loginViewsMargin"
+                        android:textColorHint="@android:color/black">
 
                         <EditText
                             android:id="@+id/editTextPassword"
@@ -80,6 +83,7 @@
                             android:hint="@string/login_password_hint"
                             android:inputType="textPassword"
                             android:maxLines="1"
+                            android:textColor="@android:color/black"
                             tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
                     </com.google.android.material.textfield.TextInputLayout>
 
