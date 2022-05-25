@@ -10,6 +10,8 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,10 +27,14 @@ import com.google.mediapipe.framework.Packet;
 import com.google.mediapipe.framework.PacketGetter;
 import com.google.mediapipe.glutil.EglManager;
 
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.concurrent.ExecutionException;
 
 
 public class MediaPipe extends AppCompatActivity {
@@ -52,6 +58,7 @@ public class MediaPipe extends AppCompatActivity {
         System.loadLibrary("mediapipe_jni");
         System.loadLibrary("opencv_java3");
     }
+    MediaPipe ints = this;
 
     // {@link SurfaceTexture} where the camera-preview frames can be accessed.
     private SurfaceTexture previewFrameTexture;
@@ -81,7 +88,7 @@ public class MediaPipe extends AppCompatActivity {
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(TAG, "Cannot find application info: " + e);
         }
-
+        ints = this;
         previewDisplayView = new SurfaceView(this);
         setupPreviewDisplayView();
 
@@ -105,24 +112,33 @@ public class MediaPipe extends AppCompatActivity {
         Map<String, Packet> inputSidePackets = new HashMap<>();
         inputSidePackets.put(INPUT_NUM_HANDS_SIDE_PACKET_NAME, packetCreator.createInt32(NUM_HANDS));
         processor.setInputSidePackets(inputSidePackets);
+        System.out.println("hm4");
 
         // To show verbose logging, run:
         // adb shell setprop log.tag.MainActivity VERBOSE
-        if (Log.isLoggable(TAG, Log.VERBOSE)) {
+       // if (Log.isLoggable(TAG, Log.VERBOSE)) {
             processor.addPacketCallback(
                     OUTPUT_LANDMARKS_STREAM_NAME,
                     (packet) -> {
                         Log.v(TAG, "Received multi-hand landmarks packet.");
                         List<LandmarkProto.NormalizedLandmarkList> multiHandLandmarks =
                                 PacketGetter.getProtoVector(packet, LandmarkProto.NormalizedLandmarkList.parser());
-                        Log.v(
-                                TAG,
-                                "[TS:"
-                                        + packet.getTimestamp()
-                                        + "] "
-                                        + getMultiHandLandmarksDebugString(multiHandLandmarks));
+                        System.out.println("hm");
+                        try {
+
+                            Log.v(
+                                    TAG,
+                                    "[TS:"
+                                            + packet.getTimestamp()
+                                            + "] "
+                                            + getMultiHandLandmarksDebugString(multiHandLandmarks));
+                        } catch (ExecutionException e) {
+                            e.printStackTrace();
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     });
-        }
+//        }
     }
 
     // Used to obtain the content view for this application. If you are extending this class, and
@@ -186,6 +202,7 @@ public class MediaPipe extends AppCompatActivity {
         return new Size(width, height);
     }
 
+
     protected void onPreviewDisplaySurfaceChanged(
             SurfaceHolder holder, int format, int width, int height) {
         // (Re-)Compute the ideal size of the camera-preview display (the area that the
@@ -230,16 +247,21 @@ public class MediaPipe extends AppCompatActivity {
                         });
     }
 
-    private String getMultiHandLandmarksDebugString(List<LandmarkProto.NormalizedLandmarkList> multiHandLandmarks) {
+    private String getMultiHandLandmarksDebugString(List<LandmarkProto.NormalizedLandmarkList> multiHandLandmarks) throws ExecutionException, InterruptedException {
         if (multiHandLandmarks.isEmpty()) {
             return "No hand landmarks";
         }
         String multiHandLandmarksStr = "Number of hands detected: " + multiHandLandmarks.size() + "\n";
+
+        ArrayList<HashMap<String, Float>> dataMap = new ArrayList<HashMap<String, Float>>();
+
         int handIndex = 0;
+
         for (LandmarkProto.NormalizedLandmarkList landmarks : multiHandLandmarks) {
             multiHandLandmarksStr +=
                     "\t#Hand landmarks for hand[" + handIndex + "]: " + landmarks.getLandmarkCount() + "\n";
             int landmarkIndex = 0;
+
             for (LandmarkProto.NormalizedLandmark landmark : landmarks.getLandmarkList()) {
                 multiHandLandmarksStr +=
                         "\t\tLandmark ["
@@ -252,6 +274,28 @@ public class MediaPipe extends AppCompatActivity {
                                 + landmark.getZ()
                                 + ")\n";
                 ++landmarkIndex;
+                HashMap<String, Float> info = new HashMap<String, Float>();
+                info.put("x", landmark.getX());
+                info.put("y", landmark.getY());
+                info.put("z", landmark.getZ());
+                dataMap.add(info);
+
+
+            }
+            if (handIndex == 0) {
+                List<JSONObject> jsonObj = new ArrayList<JSONObject>();
+
+                for(HashMap<String, Float> data : dataMap) {
+                    JSONObject obj = new JSONObject(data);
+                    jsonObj.add(obj);
+                }
+
+                JSONArray test = new JSONArray(jsonObj);
+
+                String asd = new mediapipeAPI(test, findViewById(R.id.textView3), findViewById(R.id.textView9), findViewById(R.id.textView10), findViewById(R.id.textView11)).execute().get();
+                System.out.println("hi");
+
+
             }
             ++handIndex;
         }
