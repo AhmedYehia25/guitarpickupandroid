@@ -21,7 +21,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 class registerAPI extends AsyncTask<Void, Void, Boolean> {
-    String myUrl = "http://192.168.1.22:8000/api/register/";
+    String myUrl = "http://138.68.160.89/api/register/";
     String email, username, pass;
     registerAPI(String email, String username, String pass) {
         this.email = email;
