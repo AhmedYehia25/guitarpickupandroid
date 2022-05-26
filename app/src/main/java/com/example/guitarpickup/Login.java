@@ -21,7 +21,7 @@ import javax.net.ssl.HttpsURLConnection;
 
 public class Login extends AppCompatActivity {
     //TODO:Declare Member variables
-    String myUrl = "http://192.168.1.20:8000";
+    String myUrl = "http://138.68.160.89/";
     private Button lLogin;
     EditText edit1;
     EditText edit2;
