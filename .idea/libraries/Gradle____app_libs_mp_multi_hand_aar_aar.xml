@@ -1,10 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: ./app/libs/mp_multi_hand_aar.aar">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../android-sdk/caches/transforms-2/files-2.1/3075936f389d145485492eb2424097ec/mp_multi_hand_aar/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3075936f389d145485492eb2424097ec/mp_multi_hand_aar/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fbf45c1c73001f8d9eedb18c6b598d6/jetified-mp_multi_hand_aar/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fbf45c1c73001f8d9eedb18c6b598d6/jetified-mp_multi_hand_aar/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fbf45c1c73001f8d9eedb18c6b598d6/jetified-mp_multi_hand_aar/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/4fbf45c1c73001f8d9eedb18c6b598d6/jetified-mp_multi_hand_aar/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />

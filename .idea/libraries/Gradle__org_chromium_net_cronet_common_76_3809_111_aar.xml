@@ -1,14 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.chromium.net:cronet-common:76.3809.111@aar">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../../android-sdk/caches/transforms-2/files-2.1/e21d58c5d6c667a235c7e7f5708f7a57/jetified-cronet-common-76.3809.111/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51fc638acbdbf671200efebd4d74e986/jetified-cronet-common-76.3809.111/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51fc638acbdbf671200efebd4d74e986/jetified-cronet-common-76.3809.111/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51fc638acbdbf671200efebd4d74e986/jetified-cronet-common-76.3809.111/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b667cdb20c04493f4cb0389db7675e35/jetified-cronet-common-76.3809.111/res" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e93ac4794217b52c80f80d7379f00c38/jetified-cronet-common-76.3809.111/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e93ac4794217b52c80f80d7379f00c38/jetified-cronet-common-76.3809.111/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e93ac4794217b52c80f80d7379f00c38/jetified-cronet-common-76.3809.111/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/e93ac4794217b52c80f80d7379f00c38/jetified-cronet-common-76.3809.111/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
